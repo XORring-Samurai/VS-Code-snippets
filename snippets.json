@@ -1,0 +1,247 @@
+{
+	// Place your snippets for cpp here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	"Print to console": {
+		"prefix": "log",
+		"body": [
+			"console.log('$1');",
+			"$2"
+		],
+		"description": "Log output to console"
+	},
+
+	"Kick_start_Template": {
+		"prefix": "KickStart",
+		"body": [
+			"#pragma GCC optimize(\"Ofast\")",
+			"#pragma GCC optimization (\"unroll-loops\")",
+			" ",
+			"#include <bits/stdc++.h>",
+			" ",
+			"#define IOS ios_base::sync_with_stdio(0); cin.tie(0);",
+			"#define pb push_back",
+			"#define pf push_front",
+			"#define ppb pop_back",
+			"#define ppf pop_front",
+			"#define ff first",
+			"#define ss second",
+			"#define ins insert",
+			"#define sz(x) (int)x.size()",
+			"#define dbg(x) cout << x << \"\\n\";",
+			" ",
+			"const int N = 2e5 + 5;",
+			"const long long int mod = 1e9 + 7;",
+			"const long long int Mod = 998244353;",
+			"const long double Pi = acos(-1);",
+			"const long long int Inf = 4e18;",
+			"const long double Eps = 1e-9;",
+			"const long long int Const = 1e9;",
+			" ",
+			"int dx[9] = {0, 1, -1, 0, 0, 1, 1, -1, -1};",
+			"int dy[9] = {0, 0, 0, 1, -1, 1, -1, 1, -1};",
+			" ",
+			"using namespace std;",
+			" ",
+			"void TestCase (int i){",
+			"        cout << \"Case #\" << i << \" \";",
+			" ",	
+			"}",
+			" ",
+			"int main(){",
+			"        IOS;",
+			"        int T = 1;",
+			"        // cin >> T;",
+			"        for(int i = 1; i<=T; i++){",
+			"                TestCase(i);",
+			"                cout << \"\\n\";",
+			"        }",
+			"        return 0;",
+			"}"
+
+		],
+		"description": "Log output to console"
+	},
+
+	"Template": {
+		"prefix": "Template",
+		"body": [
+			"#pragma GCC optimize(\"Ofast\")",
+			"#pragma GCC optimization (\"unroll-loops\")",
+			" ",
+			"#include <bits/stdc++.h>",
+			" ",
+			"#define IOS ios_base::sync_with_stdio(0); cin.tie(0);",
+			"#define pb push_back",
+			"#define pf push_front",
+			"#define ppb pop_back",
+			"#define ppf pop_front",
+			"#define ff first", 
+			"#define ss second",
+			"#define ins insert",
+			"#define sz(x) (int)x.size()",
+			"#define dbg(x) cout << x << \"\\n\";",
+			" ",
+			"const int N = 2e5 + 5;",
+			"const long long int mod = 1e9 + 7;",
+			"const long long int Mod = 998244353;",
+			"const long double Pi = acos(-1);",
+			"const long long int Inf = 4e18;",
+			"const long double Eps = 1e-9;",
+			"const long long int Const = 1e9;",
+			" ",
+			"int dx[9] = {0, 1, -1, 0, 0, 1, 1, -1, -1};",
+			"int dy[9] = {0, 0, 0, 1, -1, 1, -1, 1, -1};",
+			" ",
+			"using namespace std;",
+			" ",
+			"void TestCase (){",
+			" ",	
+			"}",
+			" ",
+			"int main(){",
+			"        IOS;",
+			"        int T = 1;",
+			"        // cin >> T;",
+			"        while(T--){",
+			"                TestCase();",
+			"                cout << \"\\n\";",
+			"        }",
+			"        return 0;",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+
+	"Exponentiation": {
+		"prefix": "Exp",
+		"body": [
+			"int Exp (int a, int b){",
+			"        int res = 1;",
+			"        assert(b >= 0);",
+			"        while(b){",
+			"                if(b & 1) res = (res * a);",
+			"                a = (a * a);",
+			"                b >>= 1;",
+			"        }",
+			"        return res;",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+
+
+	"Modular_Exponentiation": {
+		"prefix": "ModExp",
+		"body": [
+			"int ModExp (int a, int b, int m){",
+			"        int res = 1;",
+			"        assert(b >= 0);",
+			"        while(b){",
+			"                if(b & 1) res = (res * a) % m;",
+			"                a = (a * a) % m;",
+			"                b >>= 1;",
+			"        }",
+			"        return res;",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+
+	"Nth_Root": {
+		"prefix": "Nth-Root",
+		"body": [
+			"int Exp (int a, int b){",
+			"        int res = 1;",
+			"        assert(b >= 0);",
+			"        while(b){",
+			"                if(b & 1) res = (res * a);",
+			"                a = (a * a);",
+			"                b >>= 1;",
+			"        }",
+			"        return res;",
+			"}",
+			"",
+			"int Nth_Root (int a, int n){",
+			"        // adjust ub",
+			"        int lb = 1, ub = 100001, ret = 1;",
+			"        while(lb <= ub){",
+			"                int mid = (lb + ub) >> 1;",
+			"                int z = Exp(mid, n);",
+			"                if(z <= a){",
+			"                        ret = max(ret, mid);",
+			"                        lb = mid + 1;",
+			"                }",
+			"                else ub = mid - 1;",
+			"        }",
+			"        return ret;",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+
+	"Matrix_Exponentiation": {
+		"prefix": "MatExp",
+		"body": [
+			"vector <vector <int> > Multiply (vector <vector <int> > &a, vector <vector <int> > &b, int dim, int m){",
+			"       vector <vector <int> > ret(dim, vector <int> (dim, 0));",
+			"       for(int i = 0; i<dim; i++){",
+			"               for(int j = 0; j<dim; j++){",
+			"                       for(int k = 0; k<dim; k++){",
+			"                               ret[i][k] += (a[i][j] * b[j][k]) % m;",
+			"                               ret[i][k] %= mod;",
+			"                       }",
+			"               }",
+			"       }",
+			"       return ret;",
+			"}",
+			"", 
+			"vector <vector <int> > MatExp (vector <vector <int> > &a, int dim, int n, int m){",
+			"       vector <vector <int> > ret(dim, vector <int> (dim, 0));",
+			"       for(int i = 0; i<dim; i++) ret[i][i] = 1;",
+			"       assert(n >= 0);",
+			"       while(n){",
+			"               if(n & 1) ret = Multiply(ret, a, dim, m);",
+			"               a = Multiply(a, a, dim, m);",
+			"               n >>= 1;",
+			"       }",
+			"       return ret;",
+			"}"
+		],
+		"description": "Log output to console"
+	},
+
+	"Fenwick_Tree": {
+		"prefix": "Fenwick",
+		"body": [
+			"struct FenwickTree{",
+			"        int s;",
+			"        vector <int> bit;",
+			"",
+			"        void Initialize (int n){", 
+			"                s = n + 1;",
+			"                bit.assign(s, 0);", 
+			"        }",
+			"",
+			"        void Update (int i, int x){",
+			"                while(i < s){",
+			"                        bit[i] += x;",
+			"                        i = (i | (i + 1));",
+			"                }",
+			"        }",
+			"",
+			"        int Sum (int i){",
+			"                int res = 0;",
+			"                while(i >= 0){",
+			"                        res += bit[i];",
+			"                        i = (i & (i + 1)) - 1;",
+			"                }",
+			"                return res;",
+			"        }", 
+			"};"
+		],
+		"description": "Log output to console"
+	},
+}
